@@ -7,7 +7,6 @@ script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # set defaults
 mysql_version=5.7.24
-overwrite_plugins="N"
 push_images="N"
 
 docker_repo=nmedija/mysql
