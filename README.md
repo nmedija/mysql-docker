@@ -49,14 +49,14 @@ NOTES:
 
 ## Running as a server
 ```
-$ docker run -it --rm --name nmedija-mysql -p 3306:3306 \
-      -e MYSQL_ROOT_PASSWORD="NotSecure" \
-      -e MYSQL_REMOTE_ADMIN_USER="admin" \
-      -e MYSQL_REMOTE_ADMIN_PASSWORD="PleaseChangeMe"
-      -e MYSQL_DATABASE="grafana" \
-      -e MYSQL_DATABASE_USER="grafana" \
-      -e MYSQL_DATABASE_USER_PASSWORD="DoNotUseThisPassword" \
-      nmedija/mysql:5.7.24-latest
+docker run -it --rm --name nmedija-mysql -p 3306:3306 \
+    -e MYSQL_ROOT_PASSWORD="NotSecure" \
+    -e MYSQL_REMOTE_ADMIN_USER="admin" \
+    -e MYSQL_REMOTE_ADMIN_PASSWORD="PleaseChangeMe" \
+    -e MYSQL_DATABASE="grafana" \
+    -e MYSQL_DATABASE_USER="grafana" \
+    -e MYSQL_DATABASE_USER_PASSWORD="DoNotUseThisPassword" \
+    nmedija/mysql:5.7.24-latest
 ```    
 
 ## Running as a client
@@ -64,5 +64,5 @@ $ docker run -it --rm --name nmedija-mysql -p 3306:3306 \
 docker run -it --rm --name mysql-client \
     --net=host \
     nmedija/mysql:5.7.24-latest \
-    mysql -h 127.0.0.1 -uadmin -pThisIsMyAdminPassword
+    mysql -h 127.0.0.1 -uadmin -pPleaseChangeMe
 ```          
